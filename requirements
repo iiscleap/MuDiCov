@@ -1,0 +1,13 @@
+Data dependencies
+===================================
+The script run.sh downloads the required Coswara dataset. 
+[Download size ~9GB]
+
+Software Dependencies
+===================================
+sklearn  	-- v 0.23.2
+numpy    	-- v 1.19.5
+pandas   	-- v 1.0.5
+opensmile	-- v 2.0.0
+pickle
+
