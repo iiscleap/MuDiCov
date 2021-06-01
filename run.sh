@@ -86,5 +86,18 @@ if [ $stage -le 5 ];then
 	python local/score_fusion.py $datadir fusion
 fi
 
-echo "Done"
+if [ $stage -le 6 ];then
+	echo "==== Do plotting ====="
+	cd plotscripts
+	mkdir -p plots
+	python JBHI_dataset_metadata_plot.py
+	python JBHI_fused_test_ROC_confusion_matrices_plot.py
+	python JBHI_lr_svm_val_test_ROCs_plot.py
+	python JBHI_performance_summary_plot.py
+	python JBHI_score_analysis_plot.py
+	python JBHI_symptoms_odds_ratio_plot.py
+	cd ../
+fi
+
+echo "Done: plots are at plotscripts/plots"
 cat fusion/RESULTS
